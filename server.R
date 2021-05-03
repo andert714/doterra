@@ -22,7 +22,7 @@ function(input, output){
     dateRangeInput('dates', 'Accuracy from', start_date, today() - 1, start_date, today() - 1)
   })
   output$graph <- renderDygraph({
-    validate(need(input$password == 'password', 'Please input password.'))
+    validate(need(input$password == 'password', 'This app contains random sample data. The password is "password".'))
     validate(need(nrow(df()) > 0, 'This market does not have an AHT forecast yet.'))
     if(input$tab == 'current'){
       ts_graph(df())
